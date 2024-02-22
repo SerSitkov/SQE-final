@@ -15,17 +15,16 @@ public class CreateUserTest {
 
         RestAssured.baseURI = "https://petstore.swagger.io/v2";
 
-        String requestBody = """
-                {
-                  "id": 1,
-                  "username": "TestUser",
-                  "firstName": "John",
-                  "lastName": "Doe",
-                  "email": "testuser@example.com",
-                  "password": "password",
-                  "phone": "123456789",
-                  "userStatus": 0
-                }""";
+        String requestBody = "{\n" +
+                             "  \"id\": 1,\n" +
+                             "  \"username\": \"TestUser\",\n" +
+                             "  \"firstName\": \"John\",\n" +
+                             "  \"lastName\": \"Doe\",\n" +
+                             "  \"email\": \"testuser@example.com\",\n" +
+                             "  \"password\": \"password\",\n" +
+                             "  \"phone\": \"123456789\",\n" +
+                             "  \"userStatus\": 0\n" +
+                             "}";
 
         given()
                 .contentType(ContentType.JSON)

@@ -16,25 +16,24 @@ public class AddingNewPetTest {
         RestAssured.baseURI = "https://petstore.swagger.io/v2";
 
         // Define request body for adding a new pet
-        String requestBody = """
-                {
-                  "id": 8,
-                  "category": {
-                    "id": 0,
-                    "name": "string"
-                  },
-                  "name": "doggie",
-                  "photoUrls": [
-                    "string"
-                  ],
-                  "tags": [
-                    {
-                      "id": 0,
-                      "name": "string"
-                    }
-                  ],
-                  "status": "available"
-                }""";
+        String requestBody = "{\n" +
+                             "  \"id\": 8,\n" +
+                             "  \"category\": {\n" +
+                             "    \"id\": 0,\n" +
+                             "    \"name\": \"string\"\n" +
+                             "  },\n" +
+                             "  \"name\": \"doggie\",\n" +
+                             "  \"photoUrls\": [\n" +
+                             "    \"string\"\n" +
+                             "  ],\n" +
+                             "  \"tags\": [\n" +
+                             "    {\n" +
+                             "      \"id\": 0,\n" +
+                             "      \"name\": \"string\"\n" +
+                             "    }\n" +
+                             "  ],\n" +
+                             "  \"status\": \"available\"\n" +
+                             "}";
 
         // Send POST request to add a new pet
         given()

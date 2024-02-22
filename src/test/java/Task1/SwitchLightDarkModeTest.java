@@ -19,13 +19,16 @@ public class SwitchLightDarkModeTest {
     @Test
     @DisplayName("Switching the theme mode")
     public void switchingMode() throws InterruptedException {
+        String darkModeColorValue = "rgba(6, 6, 6, 1)";
+        String lightModeColorValue = "rgba(251, 250, 250, 1)";
         //Opening the EPAM site
         driver.get("https://www.epam.com/");
 
         // Switching theme mode to opposite
+        WebElement header = driver.findElement(By.className("header-ui-23"));
+        Assertions.assertEquals(darkModeColorValue, header.getCssValue("background-color"));
         driver.findElement(By.xpath("//*[@id=\"wrapper\"]/div[2]/div[1]/header/div/div/section/div")).click();
-        Thread.sleep(2000);
-
+        Assertions.assertEquals(lightModeColorValue, header.getCssValue("background-color"));
     }
 
     @AfterAll

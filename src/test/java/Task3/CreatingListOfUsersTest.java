@@ -14,40 +14,38 @@ public class CreatingListOfUsersTest {
 
         RestAssured.baseURI = "https://petstore.swagger.io/v2";
 
-        String requestBody = """
-                [
-                  {
-                    "id": 1,
-                    "username": "AM",
-                    "firstName": "Arthur",
-                    "lastName": "Morgan",
-                    "email": "art@mor.com",
-                    "password": "armor",
-                    "phone": "123",
-                    "userStatus": 1
-                  },
-                  {
-                    "id": 2,
-                    "username": "MB",
-                    "firstName": "Mika",
-                    "lastName": "Bell",
-                    "email": "mike@bell.com",
-                    "password": "mikbe",
-                    "phone": "456",
-                    "userStatus": 2
-                  },
-                  {
-                    "id": 3,
-                    "username": "DV",
-                    "firstName": "Dutch",
-                    "lastName": "Van Der Linde",
-                    "email": "du@linde.com",
-                    "password": "dutch",
-                    "phone": "789",
-                    "userStatus": 3
-                  }
-                ]
-                """;
+        String requestBody = "[\n" +
+                             "  {\n" +
+                             "    \"id\": 1,\n" +
+                             "    \"username\": \"AM\",\n" +
+                             "    \"firstName\": \"Arthur\",\n" +
+                             "    \"lastName\": \"Morgan\",\n" +
+                             "    \"email\": \"art@mor.com\",\n" +
+                             "    \"password\": \"armor\",\n" +
+                             "    \"phone\": \"123\",\n" +
+                             "    \"userStatus\": 1\n" +
+                             "  },\n" +
+                             "  {\n" +
+                             "    \"id\": 2,\n" +
+                             "    \"username\": \"MB\",\n" +
+                             "    \"firstName\": \"Mika\",\n" +
+                             "    \"lastName\": \"Bell\",\n" +
+                             "    \"email\": \"mike@bell.com\",\n" +
+                             "    \"password\": \"mikbe\",\n" +
+                             "    \"phone\": \"456\",\n" +
+                             "    \"userStatus\": 2\n" +
+                             "  },\n" +
+                             "  {\n" +
+                             "    \"id\": 3,\n" +
+                             "    \"username\": \"DV\",\n" +
+                             "    \"firstName\": \"Dutch\",\n" +
+                             "    \"lastName\": \"Van Der Linde\",\n" +
+                             "    \"email\": \"du@linde.com\",\n" +
+                             "    \"password\": \"dutch\",\n" +
+                             "    \"phone\": \"789\",\n" +
+                             "    \"userStatus\": 3\n" +
+                             "  }\n" +
+                             "]\n";
 
         given()
                 .contentType(ContentType.JSON)

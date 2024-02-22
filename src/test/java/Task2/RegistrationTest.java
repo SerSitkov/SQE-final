@@ -43,7 +43,7 @@ public class RegistrationTest {
         registerButton.click();
 
         WebElement completedRegistrationText = driver.findElement(By.xpath("//div[@class='result']"));
-        System.out.println("Registration complete: " + completedRegistrationText.isDisplayed());
+        Assertions.assertTrue(completedRegistrationText.isDisplayed());
 
     }
 

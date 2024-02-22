@@ -27,6 +27,5 @@ public class UpdatingPetImageTest {
                 .then()
                 .statusCode(200)
                 .body("type", equalTo("unknown"));
-        //.body("message", equalTo("ok"));
     }
 }

@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.devtools.v119.log.Log;
 
 public class RequiredFieldsValidationTest {
 
@@ -19,7 +20,6 @@ public class RequiredFieldsValidationTest {
     @Test
     @DisplayName("Check required fields validation")
     public void requiredFieldsValidation() throws InterruptedException {
-
         //Opening the EPAM site
         driver.get("https://www.epam.com/about/who-we-are/contact");
         driver.findElement(By.xpath("//button[@id='onetrust-accept-btn-handler']")).click();
@@ -37,13 +37,12 @@ public class RequiredFieldsValidationTest {
         //WebElement howDidYouHearAboutEPAMError = driver.findElement(By.xpath("//span[@aria-expanded='true']//span[@role='textbox']"));
         //div[@class='dropdown-list__input form-component__input']//span[@class='validation-text'][normalize-space()='This is a required field']
         //WebElement consentCheckError = driver.findElement(By.xpath("//label[@for='new_form_gdprConsent_33e5a285-63a1-4c40-b486-fd2d32b265bd']"));
-        if (firstNameError.isDisplayed() && lastNameError.isDisplayed() && emailError.isDisplayed()
-                && phoneError.isDisplayed()) {
-            System.out.println("Validation for required fields is working correctly.");
-        } else {
-            System.out.println("Validation for required fields is not working correctly.");
-        }
-
+        boolean isRequiredErrorAppeared = firstNameError.isDisplayed()
+                                          && lastNameError.isDisplayed()
+                                          && emailError.isDisplayed()
+                                          && phoneError.isDisplayed();
+        Assertions.assertTrue(isRequiredErrorAppeared);
+        Log.enable();
     }
 
     @AfterAll

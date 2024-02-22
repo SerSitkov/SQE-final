@@ -26,7 +26,5 @@ public class DeletingPetTest {
                 .statusCode(200)
                 .body("type", equalTo("unknown"))
                 .body("message", equalTo(petId));
-
     }
-
 }

@@ -11,7 +11,6 @@ public class LogOutUserTest {
 
     @Test
     public void testLogOut() {
-
         RestAssured.baseURI = "https://petstore.swagger.io/v2";
 
         given()
@@ -23,5 +22,4 @@ public class LogOutUserTest {
                 .body("type", equalTo("unknown"))
                 .body("message", equalTo("ok"));
     }
-
 }

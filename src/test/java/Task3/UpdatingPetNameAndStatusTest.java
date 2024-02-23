@@ -10,13 +10,11 @@ public class UpdatingPetNameAndStatusTest {
 
     @Test
     public void testUpdatePetNameAndStatus() {
-
         RestAssured.baseURI = "https://petstore.swagger.io/v2";
 
         int petId = 228;
         String name = "Garfield";
         String status = "Sold";
-
 
         given()
                 .contentType("application/x-www-form-urlencoded")
@@ -28,6 +26,5 @@ public class UpdatingPetNameAndStatusTest {
                 .statusCode(200)
                 .body("type", equalTo("unknown"))
                 .body("message", equalTo(String.valueOf(petId)));
-
     }
 }

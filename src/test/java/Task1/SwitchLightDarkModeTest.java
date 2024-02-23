@@ -28,6 +28,7 @@ public class SwitchLightDarkModeTest {
         WebElement header = driver.findElement(By.className("header-ui-23"));
         Assertions.assertEquals(darkModeColorValue, header.getCssValue("background-color"));
         driver.findElement(By.xpath("//*[@id=\"wrapper\"]/div[2]/div[1]/header/div/div/section/div")).click();
+        Thread.sleep(1000);
         Assertions.assertEquals(lightModeColorValue, header.getCssValue("background-color"));
     }
 
